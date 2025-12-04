@@ -44,7 +44,7 @@ public class SecurityConfig {
                 // 3. TELL SPRING SECURITY TO USE YOUR CONFIG
                 .cors(cors -> cors.configurationSource(corsConfigurationSource))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**", "/api/trips/generate").permitAll()
+                        .requestMatchers("/api/auth/**", "/auth/**", "/api/trips/generate").permitAll()
                         .requestMatchers("/api/places/**").permitAll()
                         .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated()
